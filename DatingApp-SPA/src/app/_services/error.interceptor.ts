@@ -7,8 +7,7 @@ import { catchError } from 'rxjs/operators';
 export class ErrorInterceptor implements HttpInterceptor {
   intercept(
     req: import('@angular/common/http').HttpRequest<any>,
-    next: import('@angular/common/http').HttpHandler
-  ): import('rxjs').Observable<import('@angular/common/http').HttpEvent<any>> {
+    next: import('@angular/common/http').HttpHandler): import('rxjs').Observable<import('@angular/common/http').HttpEvent<any>> {
       return next.handle(req).pipe(
           catchError(error => {
               if (error.status === 401) {

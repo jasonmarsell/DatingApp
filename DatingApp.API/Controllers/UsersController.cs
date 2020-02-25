@@ -1,15 +1,18 @@
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-using DatingApp.API.Data;
-using System.Threading.Tasks;
 using AutoMapper;
+using DatingApp.API.Data;
 using DatingApp.API.DTOs;
-using System.Collections.Generic;
-using System.Security.Claims;
+using DatingApp.API.Helpers;
 
 namespace DatingApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivityActionFilter))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]

@@ -1,7 +1,7 @@
 import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -40,7 +40,6 @@ export class CustomHammerConfig extends HammerGestureConfig  {
 
 @NgModule({
    declarations: [
-
       AppComponent,
       NavComponent,
       HomeComponent,
@@ -54,9 +53,10 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       PhotoEditorComponent
    ],
    imports: [
-      BrowserModule,
+      BrowserModule,   
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({

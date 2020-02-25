@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit {
   model = {};
   photoUrl: string;
+  baseUrl = '/';
 
   constructor(public authService: AuthService, private alertify: AlertifyService,
               private router: Router) { }

@@ -25,7 +25,6 @@ namespace DatingApp.API.Controllers
         {
             this._mapper = mapper;
             this._repo = repo;
-
         }
 
         [HttpGet]
@@ -96,6 +95,6 @@ namespace DatingApp.API.Controllers
                 return Ok();
             else
                 return BadRequest("Failed to like user");
-        }
+        }   
     }
 }
